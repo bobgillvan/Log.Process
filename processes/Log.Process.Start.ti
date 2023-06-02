@@ -1,0 +1,82 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+# Save parameters to logging cube
+
+vsCube = 'Log.Process';
+
+if ( 0 = dimix('ProcessRun', psProcess) );
+   DimensionElementInsertDirect('ProcessRun', '', psProcess, 'N');
+endif;
+
+DimensionElementComponentAdd('ProcessRun', psParentProcess, psProcess, 1);
+
+vsUser = attrs('}Clients', tm1user() ,'Name');
+
+
+vsYear = timst( now() , '\Y');
+vsMonth = timst( now() , '\m');
+vsDay = timst( now() , '\d');
+
+vsDate = vsYear | '-' |  vsMonth | '-' | vsDay;
+
+vnDate = StringToNumber( timst(now(), '\Y\m\d\h\i\s') );
+vsDateFormatted = timst(now() , '\H:\i \p \M \D,\Y UTC');
+
+
+CellPutN( vnDate, vsCube, psProcess, vsDate, 'Start Time YYYYMMDDHHNNSS');
+CellPutN( vnDate, vsCube, psProcess, vsDate, 'End Time YYYYMMDDHHNNSS');
+CellPutS( vsDateFormatted, vsCube, psProcess, vsDate, 'Start Time');
+
+
+CellPutS( 'Running', vsCube, psProcess, vsDate, 'Status');
+CellPutS( psStatusMessage, vsCube, psProcess, vsDate, 'StatusMessage');
+CellPutS( vsUser, vsCube, psProcess, vsDate, 'User');
+
+CellPutS( psParentProcess, vsCube, psProcess, vsDate, 'ParentProcess');
+
+CellPutS( psC01, vsCube, psProcess, vsDate, 'C01');
+CellPutS( psC02, vsCube, psProcess, vsDate, 'C02');
+CellPutS( psC03, vsCube, psProcess, vsDate, 'C03');
+CellPutS( psC04, vsCube, psProcess, vsDate, 'C04');
+
+
+CellPutS( psP01, vsCube, psProcess, vsDate, 'P01');
+CellPutS( psP02, vsCube, psProcess, vsDate, 'P02');
+CellPutS( psP03, vsCube, psProcess, vsDate, 'P03');
+CellPutS( psP04, vsCube, psProcess, vsDate, 'P04');
+CellPutS( psP05, vsCube, psProcess, vsDate, 'P05');
+CellPutS( psP06, vsCube, psProcess, vsDate, 'P06');
+CellPutS( psP07, vsCube, psProcess, vsDate, 'P07');
+CellPutS( psP08, vsCube, psProcess, vsDate, 'P08');
+CellPutS( psP09, vsCube, psProcess, vsDate, 'P09');
+CellPutS( psP10, vsCube, psProcess, vsDate, 'P10');
+CellPutS( psP11, vsCube, psProcess, vsDate, 'P11');
+CellPutS( psP12, vsCube, psProcess, vsDate, 'P12');
+CellPutS( psP13, vsCube, psProcess, vsDate, 'P13');
+CellPutS( psP14, vsCube, psProcess, vsDate, 'P14');
+CellPutS( psP15, vsCube, psProcess, vsDate, 'P15');
+CellPutS( psP16, vsCube, psProcess, vsDate, 'P16');
+CellPutS( psP17, vsCube, psProcess, vsDate, 'P17');
+CellPutS( psP18, vsCube, psProcess, vsDate, 'P18');
+CellPutS( psP19, vsCube, psProcess, vsDate, 'P19');
+CellPutS( psP20, vsCube, psProcess, vsDate, 'P20');
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

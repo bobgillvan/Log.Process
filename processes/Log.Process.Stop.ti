@@ -1,0 +1,85 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+# Save parameters to logging cube
+
+vsCube = 'Log.Process';
+
+vsYear = timst( now() , '\Y');
+vsMonth = timst( now() , '\m');
+vsDay = timst( now() , '\d');
+
+vsDate = vsYear | '-' |  vsMonth | '-' | vsDay;
+
+vnDate = StringToNumber( timst(now(), '\Y\m\d\h\i\s') );
+vsDateFormatted = timst(now() , '\H:\i \p \M \D,\Y UTC');
+
+
+CellPutN( vnDate, vsCube, psProcess, vsDate, 'End Time YYYYMMDDHHNNSS');
+CellPutS( vsDateFormatted, vsCube, psProcess, vsDate, 'End Time');
+
+vsStatus = psStatus;
+if (psStatus @='');
+   vsStatus = 'Completed';
+endif;
+
+vsStatusMessage = psStatusMessage;
+if (vsStatusMessage @='');
+   vsStatusMessage = 'Completed with no message';
+endif;
+
+CellPutS( vsStatus, vsCube, psProcess, vsDate, 'Status');
+CellPutS( vsStatusMessage, vsCube, psProcess, vsDate, 'StatusMessage');
+
+CellPutN( pnPrologMinorErrorCount, vsCube, psProcess, vsDate, 'PrologMinorErrorCount');
+CellPutN( pnMetadataMinorErrorCount, vsCube, psProcess, vsDate, 'MetadataMinorErrorCount');
+CellPutN( pnDataMinorErrorCount, vsCube, psProcess, vsDate, 'DataMinorErrorCount');
+
+CellPutN( pnIntersectionsAdded, vsCube, psProcess, vsDate, 'IntersectionsAdded');
+CellPutN( pnIntersectionsChanged, vsCube, psProcess, vsDate, 'IntersectionsChanged');
+CellPutN( pnIntersectionsSkipped, vsCube, psProcess, vsDate, 'IntersectionsSkipped');
+CellPutN( pnIntersectionsDeleted, vsCube, psProcess, vsDate, 'IntersectionsDeleted');
+
+# Figure out the ProcessReturnCode
+
+if ( ProcessExitNormal() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitNormal';
+elseif ( ProcessExitByBreak() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitByBreak';
+elseif ( ProcessExitByChoreQuit() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitByChoreQuit';
+elseif ( ProcessExitByChoreRollback() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitByChoreRollback';
+elseif ( ProcessExitByProcessRollback() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitByProcessRollback';
+elseif ( ProcessExitByQuit() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitByQuit';
+elseif ( ProcessExitMinorError() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitByMinorError';
+elseif ( ProcessExitOnInit() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitOnInit';
+elseif ( ProcessExitSeriousError() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitSeriousError';
+elseif ( ProcessExitWithMessage() = pnProcessReturnCode );
+    vsProcessErrorCode = 'ProcessExitWithMessage';
+endif;
+
+CellPutS( vsProcessErrorCode, vsCube, psProcess, vsDate, 'ProcessReturnCode');
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion

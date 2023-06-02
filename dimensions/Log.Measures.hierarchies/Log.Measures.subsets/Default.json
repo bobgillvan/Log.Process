@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Default",
+	"Expression":"{EXCEPT([Log.Measures].[Log.Measures].MEMBERS , {[Log.Measures].[Log.Measures].[All]})}"
+}

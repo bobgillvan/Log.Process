@@ -1,0 +1,20 @@
+{
+	"@type":"Cube",
+	"Name":"Log.Process",
+	"Dimensions":
+	[
+		{
+			"@id":"Dimensions('ProcessRun')"
+		},
+		{
+			"@id":"Dimensions('Date')"
+		},
+		{
+			"@id":"Dimensions('Log.Measures')"
+		}
+	],
+	"Views@Code.links":
+	[
+		"Log.Process.views/v.Log.Process.2023-06-01.json"
+	]
+}

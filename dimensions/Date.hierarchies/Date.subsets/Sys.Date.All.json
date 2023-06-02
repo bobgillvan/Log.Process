@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"Sys.Date.All",
+	"Expression":"TM1SubsetAll([Date])"
+}

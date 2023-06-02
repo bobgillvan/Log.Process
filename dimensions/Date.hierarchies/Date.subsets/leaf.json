@@ -1,0 +1,5 @@
+{
+	"@type":"Subset",
+	"Name":"leaf",
+	"Expression":"{TM1FILTERBYLEVEL( {DESCENDANTS( [Date].[Total Dates] )}, 0 )}"
+}

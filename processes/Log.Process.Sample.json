@@ -1,0 +1,13 @@
+{
+	"@type":"Process",
+	"Name":"Log.Process.Sample",
+	"HasSecurityAccess":false,
+	"Code@Code.link":"Log.Process.Sample.ti",
+	"UIData":"CubeAction=1511€DataAction=1503€CubeLogChanges=0€",
+	"DataSource":
+	{
+		"Type":"None"
+	},
+	"Parameters":[],
+	"Variables":[]
+}

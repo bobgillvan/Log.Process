@@ -1,0 +1,40 @@
+{
+	"@type":"Subset",
+	"Name":"s.Date.Log",
+	"Elements":
+	[
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('Total Dates')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-Q2')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-01')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-02')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-03')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-04')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-05')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-06')"
+		},
+		{
+			"@id":"Dimensions('Date')/Hierarchies('Date')/Elements('2023-06-07')"
+		}
+	]
+}

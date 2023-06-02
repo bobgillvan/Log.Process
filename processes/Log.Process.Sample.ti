@@ -1,0 +1,140 @@
+#region Prolog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+##############   STANDARD PROCESS HEADER ###############
+
+# Declare Global Variables for Logging
+NumericGlobalVariable('PrologMinorErrorCount');
+NumericGlobalVariable('MetadataMinorErrorCount');
+NumericGlobalVariable('DataMinorErrorCount');
+NumericGlobalVariable('ProcessReturnCode');
+
+
+# Set or link local variables for logging
+
+vnDebug = 1;
+vsProcess = GetProcessName();
+
+# Which process calls or wraps this one? This can be blank.
+vsParentProcess = 'NightlyRefresh';
+
+# How often should we clear the log?
+vnLogMaxDays = 30;
+
+# What is this process doing?
+vsStatusMessage = 'Running a process to .... ';
+
+# What cubes does this work with?
+
+vsC01 = 'Finance_Cube';
+vsC02 = 'Fin_Reporting';
+vsC03 = 'SKU_Cube';
+vsC04 = 'SKU_Reporting';
+
+# What parameters were passed into this process?
+
+vsP01 = '';
+vsP02 = '';
+vsP03 = '';
+vsP04 = '';
+vsP05 = '';
+vsP06 = '';
+vsP07 = '';
+vsP08 = '';
+vsP09 = '';
+vsP10 = '';
+vsP11 = '';
+vsP12 = '';
+vsP13 = '';
+vsP14 = '';
+vsP15 = '';
+vsP16 = '';
+vsP17 = '';
+vsP18 = '';
+vsP19 = '';
+vsP20 = '';
+
+# Start Process Logging
+
+ExecuteProcess('Log.Process.Start', 
+             'psProcess', vsProcess,
+             'psParentProcess', vsParentProcess,
+             'pnLogMaxDays', vnLogMaxDays,
+             'psStatusMessage', vsStatusMessage,
+             'psC01', vsC01,
+             'psC02', vsC02,
+             'psC03', vsC03,
+             'psC04', vsC04,
+             'psP01', vsP01,
+             'psP02', vsP02,
+             'psP03', vsP03,
+             'psP04', vsP04,
+             'psP05', vsP05,
+             'psP06', vsP06,
+             'psP07', vsP07,
+             'psP08', vsP08,
+             'psP09', vsP09,
+             'psP10', vsP10,
+             'psP11', vsP11,
+             'psP12', vsP12,
+             'psP13', vsP13,
+             'psP14', vsP14,
+             'psP15', vsP15,
+             'psP16', vsP16,
+             'psP17', vsP17,
+             'psP18', vsP18,
+             'psP19', vsP19,
+             'psP20', vsP20
+            );
+
+
+############## END STANDARD PROCESS HEADER #############
+
+#endregion
+#region Metadata
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Data
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+#endregion
+#region Epilog
+
+#****Begin: Generated Statements***
+#****End: Generated Statements****
+
+########### STANDARD PROCESS FOOTER ##########
+
+# Error Handling
+# What do you want to happen when errors occur?
+
+vsStatus = 'Completed';
+vsStatusMessage = 'Completed the process, but not sure what happened';
+
+vnIntersectionsAdded = 0;
+vnIntersectionsChanged = 0;
+vnIntersectionsSkipped = 0;
+vnIntersectionsDeleted = 0;
+
+
+ExecuteProcess('Log.Process.Stop',
+       'psProcess', vsProcess,
+       'psStatus', vsStatus,
+       'psStatusMessage', vsStatusMessage,
+       'pnProcessReturnCode', ProcessReturnCode,
+       'pnPrologMinorErrorCount', PrologMinorErrorCount,
+       'pnMetadataMinorErrorCount', MetadataMinorErrorCount,
+       'pnDataMinorErrorCount', DataMinorErrorCount,
+       'pnIntersectionsAdded', vnIntersectionsAdded,
+       'pnIntersectionsChanged', vnIntersectionsChanged,
+       'pnIntersectionsSkipped', vnIntersectionsSkipped,
+       'pnIntersectionsDeleted', vnIntersectionsDeleted
+       );
+       
+########### END STANDARD PROCESS FOOTER #########
+#endregion
