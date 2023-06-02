@@ -1,6 +1,6 @@
 This repository includes the infrastructure to add detailed logging to turbo integrator (ti) extraction, transformation and loading (etl) solutions.
 
-Steps To Implement
+**Steps To Implement**
 * Pull these objects from the public repository into your environment
 * Review the Log.Process.Sample TI
      * Add the header section to the top of your prolog tab where you want logging 
